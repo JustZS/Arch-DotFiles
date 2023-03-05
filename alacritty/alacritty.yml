@@ -15,9 +15,17 @@ font:
     family: Fira Code
     style: Bold Italic
 
-  size: 11
+  size: 9
 
 window:
   padding:
     x: 20
     y: 20
+
+cursor_style: Underline
+
+  # $(sed -n 1p .cache/wal/colors) for background
+
+colors:
+  primary:
+    background: '#06080B'
