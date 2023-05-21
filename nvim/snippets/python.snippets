@@ -1,0 +1,125 @@
+snippet int
+	import numpy as np
+	import sympy as sy
+
+	def f(x):
+		return $1
+
+	x = sy.Symbol("x")
+	d = sy.simplify(sy.integrate(f(x), (x, $0, )))
+
+	with open('solution.png', 'wb') as outputfile:
+		sy.preview(d, viewer='display', outputbuffer=outputfile)
+
+snippet iint
+	import numpy as np
+	import sympy as sy
+
+	def f(x):
+		return $1
+
+	x = sy.Symbol("x")
+	d = sy.simplify(sy.integrate(f(x), x))
+	
+	with open('solution.png', 'wb') as outputfile:
+		sy.preview(d, viewer='display', outputbuffer=outputfile)
+
+snippet idiff
+	import numpy as np
+	import sympy as sy
+
+	def f(x):
+		return $1
+	
+	x=sy.Symbol("x")
+	y=sy.Symbol("y")
+	d=sy.simplify(sy.idiff(f(x),y,x))
+	
+	with open('solution.png', 'wb') as outputfile:
+		sy.preview(d, viewer='display', outputbuffer=outputfile)
+
+snippet diff
+	import numpy as np
+	import sympy as sy
+	
+	def f(x):
+		return $1
+	
+	x=sy.Symbol("x")
+	d=sy.simplify(sy.diff(f(x),x))
+
+	with open('solution.png', 'wb') as outputfile:
+		sy.preview(d, viewer='display', outputbuffer=outputfile)
+
+snippet plot2d
+	import numpy as np
+	from matplotlib import pyplot as plt
+	
+	def f(x):
+	   		return $1
+	
+	x = np.linspace($2, $3, 100)
+	plt.plot(x, f(x), color='$4')
+	plt.title('$5')
+	plt.xlabel('$6')
+	plt.ylabel('$7')
+	plt.grid()
+	plt.show()
+
+snippet plot3d_surface
+	import matplotlib.pyplot as plt
+	from matplotlib import cm
+	from matplotlib.ticker import LinearLocator
+	import numpy as np
+	
+	fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+	
+	x = np.arange(-$1, $1, 0.25)
+	y = np.arange(-$2, $2, 0.25)
+	z, y = np.meshgrid(x, y)
+	z = $3
+		
+	surf = ax.plot_surface(x, y, z, cmap=cm.cividis,
+	                       linewidth=0, antialiased=False)
+	
+	ax.set_zlim(-$4, $4)
+	ax.zaxis.set_major_locator(LinearLocator(10))
+	
+	ax.zaxis.set_major_formatter('{x:.02f}')
+	
+	fig.colorbar(surf, shrink=0.5, aspect=5)
+	
+	ax.set_xlabel('$5', labelpad=20)
+	ax.set_ylabel('$6', labelpad=20)
+	ax.set_zlabel('$7', labelpad=20)
+	
+	ax.set_title('$8')
+	
+	plt.show()
+
+snippet plot3d_wireframe
+	from mpl_toolkits import mplot3d
+	import numpy as np
+	import matplotlib.pyplot as plt
+	
+	
+	# function for z axis
+	def f(x, y):
+		return $1
+	
+	# x and y axis
+	x = np.linspace(-$2, $2, 10)
+	y = np.linspace(-$3, $3, 10)
+	
+	X, Y = np.meshgrid(x, y)
+	Z = f(X, Y)
+	
+	fig = plt.figure()
+	ax = plt.axes(projection ='3d')
+	ax.plot_wireframe(X, Y, Z, color ='$4')
+	ax.set_xlabel('$5', labelpad=20)
+	ax.set_ylabel('$6', labelpad=20)
+	ax.set_zlabel('$7', labelpad=20)
+	ax.set_title('$8')
+	plt.show()
+

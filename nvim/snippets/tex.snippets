@@ -1,0 +1,547 @@
+snippet beg 
+	\begin{$1}
+	${0:${VISUAL}}
+	\end{$1}
+
+snippet date
+	`date +%F`
+
+snippet box
+	\fbox{$1}$0
+snippet dm
+	\[
+	$1
+	\] $0
+
+snippet //
+	\\frac{$1}{$2}$0
+
+
+
+snippet pre-ws
+	\documentclass{report}
+	\usepackage[utf8]{inputenc}
+	\usepackage{tikz, lipsum, lmodern}
+	\usepackage[most]{tcolorbox}
+	\usepackage{titling}
+	\usepackage{amsmath,amssymb,amsfonts}
+	\usepackage{pgfplots}
+	\usepackage[makeroom]{cancel}
+
+	\pgfplotsset{compat=newest}
+
+	\begin{document}
+	\begin{center}
+	\Huge{\textbf{Worksheet}}
+	
+	date$1
+	
+	\end{center}
+	\pagebreak
+	
+	\chapter{$2}
+		
+		$0
+
+	\end{document}
+
+snippet colorbox
+	\begin{tcolorbox}[colback=white,colframe=white!30!black, title = {\textbf{\underline{$1}}}] 
+	$0
+	\end{tcolorbox}
+
+snippet ubf
+	\underline{\textbf{$1}} $0
+
+snippet matr 
+	\begin{matrix}
+	$1
+	\end{matrix}
+	
+	$0
+
+snippet pmatr
+	\begin{pmatrix}
+	$1
+	\end{pmatrix}
+
+	$0
+
+snippet bmatr
+	\begin{bmatrix}
+	$1
+	\end{bmatrix}
+
+	$0
+
+snippet Bmatr
+	\begin{Bmatrix}
+	$1
+	\end{Bmatrix}
+
+	$0
+
+snippet vmatr
+	\begin{vmatrix}
+	$1
+	\end{vmatrix}
+
+	$0
+
+snippet Vmatr
+	\begin{Vmatrix}
+	$1
+	\end{Vmatrix}
+
+	$0
+
+snippet amatr
+	\left\langle
+	\begin{matrix}
+	$1
+	\end{matrix}
+	\right\rangle
+
+	$0
+
+snippet tmatr
+	\left\lceil
+	\begin{matrix}
+	$1
+	\end{matrix}
+	\right\rceil
+
+	$0
+
+
+snippet lamatr
+	\left\langle
+	\begin{matrix}
+	$1
+	\end{matrix}
+	\right\rvert
+	
+	$0
+
+snippet ramatr
+	\left\lvert
+	\begin{matrix}
+	$1
+	\end{matrix}
+	\right\rangle
+
+	$0
+
+snippet graphtan
+	\begin{center}
+	  \begin{tikzpicture}
+	
+	   \begin{axis}[
+		axis x line=middle,
+	        axis y line=middle,
+	        axis line style={->},
+	        xlabel={$x$},
+	        ylabel={$y$},
+	        label style={font=\scriptsize},
+	        tick label style={font=\tiny},
+	        unit vector ratio*=1 1 1,
+	        xlabel style={at={(ticklabel* cs:1)},anchor=south west},
+		ylabel style={at={(ticklabel* cs:1)},anchor=south west}, 
+	      width=10cm, height=10cm,
+	      ytick distance = 1,
+	      xmin=-2*pi, xmax=2*pi,
+	      ymin=-5.5 ,ymax=5.5,
+	      xtick={
+	           -2*pi, -(3*pi)/2, -pi, -pi/2,
+	           pi/2, pi, (3*pi)/2, 2*pi
+	       },
+	      xticklabels={
+	           $-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $-\frac{\pi}{2}$,
+	           $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $ 2\pi$
+	       },
+	      domain=-2*pi:2*pi
+	   	]
+	
+	     \addplot [domain=-2*pi:-1.51*pi, samples=100, color=black]
+	        {tan(deg(x))};
+	     \addplot [domain=-1.49*pi:-0.51*pi, samples=100, color=black]
+	        {tan(deg(x))};
+	     \addplot [domain=-0.49*pi:0.49*pi, samples=100, color=black]
+	        {tan(deg(x))};
+	     \addplot [domain=0.51*pi:1.49*pi, samples=100, color=black]
+	        {tan(deg(x))};
+	     \addplot [domain=1.51*pi:2*pi, samples=100, color=black]
+	        {tan(deg(x))};
+	
+	   \end{axis}
+	   \node[anchor=north] {\scriptsize $f(x)=\tan x$};
+	
+	  \end{tikzpicture}
+	\end{center}
+
+snippet graphcos
+	\begin{center}
+	\begin{tikzpicture}
+			
+	   \begin{axis}[	
+	   	axis x line=middle,
+        	axis y line=middle,
+                axis line style={->},
+                xlabel={$x$},
+                ylabel={$y$},
+                label style={font=\scriptsize},
+                tick label style={font=\tiny},
+                unit vector ratio*=1 1 1,
+                xlabel style={at={(ticklabel* cs:1)},anchor=south west},
+                ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+	      width=10cm, height=10cm,
+	      ytick distance = 1,
+	      ymin=-1.5, ymax=1.5,
+	      xtick={
+	           -2*pi, -(3*pi)/2, -pi, -pi/2,
+	           pi/2, pi, (3*pi)/2, 2*pi
+	        },
+	      xticklabels={
+	           $-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $-\frac{\pi}{2}$,
+	           $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $ 2\pi$
+	        },
+	      domain=-2*pi:2*pi
+	   ]
+		
+	     \addplot [samples=500, color=black]
+	        {cos(deg(x))};
+		
+	   \end{axis}
+	   \node[anchor=north] {\scriptsize $f(x)=\cos x$};
+			
+	\end{tikzpicture}
+	\end{center}
+
+snippet graphsin
+	\begin{center}
+	\begin{tikzpicture}
+		
+	   \begin{axis}[
+	   	axis x line=middle,
+        	axis y line=middle,
+                axis line style={->},
+                xlabel={$x$},
+                ylabel={$y$},
+                label style={font=\scriptsize},
+                tick label style={font=\tiny},
+                unit vector ratio*=1 1 1,
+                xlabel style={at={(ticklabel* cs:1)},anchor=south west},
+                ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+	      width=10cm, height=10cm,
+	      ytick distance = 1,
+	      ymin=-1.5, ymax=1.5,
+	      xtick={
+	           -2*pi, -(3*pi)/2, -pi, -pi/2,
+	           pi/2, pi, (3*pi)/2, 2*pi
+	        },
+	      xticklabels={
+	           $-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $-\frac{\pi}{2}$,
+	           $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $ 2\pi$
+	        },
+	      domain=-2*pi:2*pi
+	   ]
+		
+	     \addplot [samples=500, color=black]
+	        {sin(deg(x))};
+		
+	   \end{axis}
+	   \node[anchor=north] {\scriptsize $f(x)=\sin x$};
+		
+	\end{tikzpicture}
+	\end{center}
+
+snippet graphcsc
+	\begin{center}
+	\begin{tikzpicture}
+	
+	\begin{axis}[
+		axis x line=middle,
+	        axis y line=middle,
+	        axis line style={->},
+	        xlabel={$x$},
+	        ylabel={$y$},
+	        label style={font=\scriptsize},
+	        tick label style={font=\tiny},
+	        unit vector ratio*=1 1 1,
+	        xlabel style={at={(ticklabel* cs:1)},anchor=south west},
+		ylabel style={at={(ticklabel* cs:1)},anchor=south west}, 
+		width=10cm, height=10cm,
+		ytick distance = 1,
+		xmin=-2*pi, xmax=2*pi,
+		ymin=-5.5 ,ymax=5.5,
+		xtick={
+	           -2*pi, -(3*pi)/2, -pi, -pi/2,
+	           pi/2, pi, (3*pi)/2, 2*pi
+	       },
+		xticklabels={
+	           $-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $-\frac{\pi}{2}$,
+	           $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $ 2\pi$
+	       },
+	      domain=-2*pi:2*pi
+	   	]
+	
+	     \addplot [domain=-2*pi:-pi, samples=100, color=black]
+	        {1/(sin(deg(x)))};
+	     \addplot [domain=-0.99*pi:-0.01, samples=100, color=black]
+	        {1/(sin(deg(x)))};
+	     \addplot [domain=0.01:pi, samples=100, color=black]
+		{1/(sin(deg(x)))};
+	     \addplot [domain=1.01*pi:2*pi, samples=100, color=black]
+	        {1/(sin(deg(x)))};
+	     \addplot [domain=1.51*pi:2*pi, samples=100, color=black]
+	        {1/(sin(deg(x)))};
+
+	   \end{axis}
+	   \node[anchor=north] {\scriptsize $f(x)=\csc x$};
+
+	  \end{tikzpicture}
+	\end{center}
+
+
+snippet graphsec
+	\begin{center}
+	\begin{tikzpicture}
+	
+	\begin{axis}[
+		axis x line=middle,
+	        axis y line=middle,
+	        axis line style={->},
+	        xlabel={$x$},
+	        ylabel={$y$},
+	        label style={font=\scriptsize},
+	        tick label style={font=\tiny},
+	        unit vector ratio*=1 1 1,
+	        xlabel style={at={(ticklabel* cs:1)},anchor=south west},
+		ylabel style={at={(ticklabel* cs:1)},anchor=south west}, 
+		width=10cm, height=10cm,
+		ytick distance = 1,
+		xmin=-5*pi/2, xmax=5*pi/2,
+		ymin=-5.5 ,ymax=5.5,
+		xtick={
+	           -(5*pi)/2, -2*pi, -(3*pi)/2, -pi, -pi/2,
+	           pi/2, pi, (3*pi)/2, 2*pi, (5*pi)/2
+	       },
+		xticklabels={
+	        	$-\frac{5\pi}{2}$, $-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $-\frac{\pi}{2}$, $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $ 2\pi$, $\frac{5\pi}{2}$
+	       },
+	      domain=-5*pi/2:5*pi/2
+	   	]
+	
+	     \addplot [domain=-5*pi/2:-3*pi/2, samples=100, color=black]
+	        {1/(cos(deg(x)))};
+	     \addplot [domain=-3*pi/2+0.001:-pi/2, samples=100, color=black]
+	        {1/(cos(deg(x)))};
+	     \addplot [domain=-pi/2:pi/2, samples=100, color=black]
+		{1/(cos(deg(x)))};
+	     \addplot [domain=pi/2+0.01:3*pi/2, samples=100, color=black]
+	        {1/(cos(deg(x)))};
+	     \addplot [domain=3*pi/2+0.01:5*pi/2, samples=100, color=black]
+	        {1/(cos(deg(x)))};
+
+	   \end{axis}
+	   \node[anchor=north] {\scriptsize $f(x)=\sec x$};
+
+	  \end{tikzpicture}
+	\end{center}
+
+snippet graphcot
+	\begin{center}
+	  \begin{tikzpicture}
+	
+	   \begin{axis}[
+		axis x line=middle,
+	        axis y line=middle,
+	        axis line style={->},
+	        xlabel={$x$},
+	        ylabel={$y$},
+	        label style={font=\scriptsize},
+	        tick label style={font=\tiny},
+	        unit vector ratio*=1 1 1,
+	        xlabel style={at={(ticklabel* cs:1)},anchor=south west},
+		ylabel style={at={(ticklabel* cs:1)},anchor=south west}, 
+	      width=10cm, height=10cm,
+	      ytick distance = 1,
+	      xmin=-2*pi, xmax=2*pi,
+	      ymin=-5.5 ,ymax=5.5,
+	      xtick={
+	           -2*pi, -(3*pi)/2, -pi, -pi/2,
+	           pi/2, pi, (3*pi)/2, 2*pi
+	       },
+	      xticklabels={
+	           $-2\pi$, $-\frac{3\pi}{2}$, $-\pi$, $-\frac{\pi}{2}$,
+	           $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $ 2\pi$
+	       },
+	      domain=-2*pi:2*pi
+	   	]
+		
+	     \addplot [domain=-2*pi:-pi, samples=100, color=black]
+	        {1/(tan(deg(x)))};
+	     \addplot [domain=-0.99*pi:0, samples=100, color=black]
+	        {1/(tan(deg(x)))};
+	     \addplot [domain=0.01:pi, samples=100, color=black]
+	        {1/(tan(deg(x)))};
+	     \addplot [domain=1.01*pi:2*pi, samples=100, color=black]
+		{1/(tan(deg(x)))};
+	     \addplot [domain=1.51*pi:2*pi, samples=100, color=black]
+	        {1/(tan(deg(x)))};
+	
+	   \end{axis}
+	   \node[anchor=north] {\scriptsize $f(x)=\cot x$};
+
+	  \end{tikzpicture}
+	\end{center}
+
+snippet graph
+	\begin{center}
+	\begin{tikzpicture}
+			
+	   \begin{axis}[	
+	   	axis x line=middle,
+	       	axis y line=middle,
+	               axis line style={->},
+	               xlabel={$x$},
+	               ylabel={$y$},
+	               label style={font=\scriptsize},
+	               tick label style={font=\tiny},
+	               unit vector ratio*=1 1 1,
+	               xlabel style={at={(ticklabel* cs:1)},anchor=south west},
+	               ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+	      width=10cm, height=10cm,
+	      ytick distance = 1,
+	      xtick distance = 1,
+	      ymin=-$1, ymax=$1,
+	      xmin=-$2, xmax=$2,
+	      domain=-$2:$2
+	   ]
+	
+	     \addplot [samples=500, color=black]
+	        {$3};
+	
+	   \end{axis}
+	   \node[anchor=north] {\scriptsize $f(x)=$3$};
+			
+	\end{tikzpicture}
+	\end{center}	$0
+
+snippet graph3d
+	\begin{tikzpicture}
+	\begin{axis}[
+	        colormap/cool,
+	]
+	\addplot3[
+	    mesh,
+	    samples=50,
+	    domain=-$1:$1,
+	    y domain=-$2:$2
+	]
+	{$3};
+	
+	\addlegendentry{$$4$}
+	
+	\end{axis}
+	\end{tikzpicture}
+
+snippet code
+	\begin{tcolorbox}[colback=white,colframe=black,arc=0pt,outer arc=0pt] 
+	\begin{lstlisting}[language=$1]
+	$0
+	\end{lstlisting}
+	\end{tcolorbox}
+
+snippet pre-compsci
+	\documentclass{report}
+	\usepackage[utf8]{inputenc}
+	\usepackage{tikz, lipsum, lmodern}
+	\usepackage[most]{tcolorbox}
+	\usepackage{titling}
+	\usepackage{amsmath,amssymb,amsfonts}
+	\usepackage{pgfplots}
+	\usepackage[makeroom]{cancel}
+	\usepackage{indentfirst}
+	\usepackage{hyperref}
+	\usepackage{listings}
+	
+	\lstset{
+	  language=Java,
+	  basicstyle=\ttfamily,
+	  keywordstyle=\color{blue},
+	  stringstyle=\color{red},
+	  commentstyle=\color{green},
+	  morecomment=[s][\color{gray}]{/**}{*/},
+	  showstringspaces=false,
+	  tabsize=1,
+	  breaklines=true,
+	  showspaces=false,
+	  numbers=left,
+	  xleftmargin=2em,
+	  }
+	
+	\hypersetup{
+	    colorlinks=true,
+	    linkcolor=blue,
+	    filecolor=magenta,      
+	    urlcolor=blue,
+	    pdftitle={Computer Science Principles Notes},
+	    pdfpagemode=FullScreen,
+	    }
+	
+	\pgfplotsset{compat=newest}
+
+	\begin{document}
+	
+	\begin{center}
+	\Huge{\textbf{Computer Science Principles}}
+	
+	date$1
+	
+	\end{center}
+	\pagebreak
+	
+	\tableofcontents
+	
+	\pagebreak
+	
+	\chapter{$2}
+	
+	$0
+
+	\end{document}
+
+snippet pre-simple-notes 
+	\documentclass{article}
+	\usepackage[utf8]{inputenc}
+	\usepackage{tikz, lipsum, lmodern}
+	\usepackage[most]{tcolorbox}
+	\usepackage{titling}
+	\usepackage{amsmath,amssymb,amsfonts}
+	\usepackage{pgfplots}
+	\usepackage[makeroom]{cancel}
+	
+	\pgfplotsset{compat=newest}
+	
+	\begin{document}
+	
+	\pagenumbering{gobble}
+	
+	\begin{huge}
+	Chapter $1 Notes
+	\end{huge}
+	
+	\pagebreak
+
+	\begin{huge}
+	$2
+	\end{huge}
+	
+	\begin{enumerate}
+		\item{$0}
+	\end{enumerate}
+
+	\end{document}
+
+
