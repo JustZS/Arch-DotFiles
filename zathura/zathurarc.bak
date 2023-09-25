@@ -1,0 +1,81 @@
+### Settings from original zathurarc ###
+set selection-clipboard clipboard
+set synctex true
+set synctex-editor-command "nvim --remote-silent +%{line} %{input}"
+
+set highlight-transparency .5
+set render-loading "false"
+
+map <Space> toggle_index
+
+### zathura-pywal ###
+# Allow recolor
+set recolor 'true'
+
+# Don't allow original hue when recoloring set recolor-keephue 'false'
+
+# Don't keep original image colors while recoloring
+set recolor-reverse-video 'false'
+
+# Command line completion entries
+set completion-fg '#c1c0c0'
+set completion-bg '#080505'
+
+# Command line completion group elements
+set completion-group-fg '#135E96'
+set completion-group-bg '#080505'
+
+# Current command line completion element
+set completion-highlight-fg '#080505'
+set completion-highlight-bg '#c1c0c0'
+
+# Default foreground/background color
+set default-bg rgba(8,5,5,1)
+
+# Input bar
+set inputbar-fg '#c1c0c0'
+set inputbar-bg '#080505'
+
+# Notification
+set notification-fg '#c1c0c0'
+set notification-bg '#080505'
+
+# Error notification
+set notification-error-fg '#c1c0c0'
+set notification-error-bg '#AC9863'
+
+# Warning notification
+set notification-warning-fg '#c1c0c0'
+set notification-warning-bg '#AC9863'
+
+# Tab - TODO
+# set tabbar-fg
+# set tabbar-bg
+
+# Focused tab - TODO
+# set tabbar-focus-fg
+# set tabbar-focus-bg
+
+# Status bar
+set statusbar-fg '#c1c0c0'
+set statusbar-bg '#080505'
+
+# Highlighting parts of the document (e.g. show search results)
+set highlight-color '#135E96'
+set highlight-active-color '#135E96'
+
+# Represent light/dark colors in recoloring mode
+set recolor-lightcolor rgba(0,0,0,0)
+set recolor-darkcolor '#c1c0c0'
+
+# 'Loading...' text
+set render-loading-fg '#c1c0c0'
+set render-loading-bg '#080505'
+
+# Index mode
+set index-fg '#c1c0c0'
+set index-bg '#080505'
+
+# Selected element in index mode
+set index-active-fg '#080505'
+set index-active-bg '#c1c0c0'

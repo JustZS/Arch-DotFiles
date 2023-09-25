@@ -1,0 +1,33 @@
+ncmpcpp_directory = /home/justzs/.config/ncmpcpp/
+lyrics_directory = /home/justzs/.config/ncmpcpp/lyrics/
+mpd_host = localhost
+mpd_port = 6601
+mpd_music_dir = /home/justzs/media/Music 
+
+lyrics_fetchers = genius
+fetch_lyrics_for_current_song_in_background = yes
+
+playlist_display_mode = columns
+user_interface = alternative
+
+display_bitrate = yes
+
+audio_output {
+    type                    "fifo"
+    name                    "my_fifo"
+    path                    "/tmp/mpd.fifo"
+    format                  "44100:16:2"
+}
+
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = "my_fifo"
+visualizer_in_stereo = "yes"
+visualizer_type = "spectrum"
+visualizer_look = "▊▊"
+visualizer_fps = 120
+visualizer_spectrum_smooth_look = yes
+visualizer_autoscale = yes
+visualizer_spectrum_hz_min = 20
+visualizer_spectrum_hz_max = 16000
+
+

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+mlbv --boxscore --filter sea | sed -r "s/\x1B\[[0-9;]*[JKmsu]//g" | sed '1d' > /tmp/test.txt && text2pdf -s8 -c95 -t3 /tmp/test.txt > /tmp/test.pdf 
+
+floating=$(dwm-msg get_layouts | sed -n 's/.*"address": \([0-9]*\).*/\1/p' | sed -n '2p')
+
+tiling=$(dwm-msg get_layouts | sed -n 's/.*"address": \([0-9]*\).*/\1/p' | sed -n '1p')
+
+dwm-msg run_command setlayoutsafe $floating
+
+zathura /tmp/test.pdf
+
+dwm-msg run_command setlayoutsafe $tiling
+
