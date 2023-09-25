@@ -1,4 +1,4 @@
 # Arch-DotFiles
 Arch Linux Dotfiles
 
-![](Arch-DotFiles/screenshot.png)
+![alt text](https://github.com/JustZS/Arch-DotFiles/edit/ain/screenshot.jpg?raw=true)
