@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOCATION="Tacoma"
+LOCATION=""
 INT_FILE="/tmp/int_value_weather.txt"
 CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}"
 WEATHER_CACHE="$CACHE_DIR/weatherreport"
